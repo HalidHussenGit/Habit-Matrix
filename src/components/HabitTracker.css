@@ -1,0 +1,192 @@
+.habit-tracker {
+  background: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tracker-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.header-top h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.period-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.period-btn {
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.period-btn:hover {
+  color: #bbb;
+}
+
+.period-btn.active {
+  color: #fff;
+  font-weight: 500;
+}
+
+.separator {
+  color: #444;
+  font-size: 12px;
+}
+
+.habits-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 60px) 40px;
+  gap: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #2a2a2a;
+  position: sticky;
+  top: 0;
+  background: #1a1a1a;
+  z-index: 10;
+  align-items: center;
+}
+
+.habit-name-header {
+  padding: 12px 0;
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.habit-checkbox-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.week-label {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.habit-actions-header {
+  width: 40px;
+}
+
+.habits-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.habit-row {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 60px) 40px;
+  gap: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #252525;
+  align-items: center;
+  min-height: 44px;
+  transition: background 0.15s;
+}
+
+.habit-row:hover {
+  background: #222;
+}
+
+.habit-name {
+  padding: 12px 0;
+  color: #ccc;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.habit-checkbox-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.habit-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #0066ff;
+}
+
+.habit-checkbox:checked {
+  background-color: #0066ff;
+}
+
+.habit-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.action-btn:hover {
+  color: #bbb;
+}
+
+.more-btn {
+  opacity: 0;
+}
+
+.habit-row:hover .more-btn {
+  opacity: 1;
+}
+
+/* Scrollbar styling */
+.habits-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.habits-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.habits-list::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+.habits-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
