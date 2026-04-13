@@ -1,10 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Sidebar from './components/Sidebar'
 import MainContent from './components/MainContent'
 
+const getPreferredTheme = () => {
+  if (typeof window === 'undefined') {
+    return 'dark'
+  }
+
+  const savedTheme = window.localStorage.getItem('theme')
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
 function App() {
   const [selectedPage, setSelectedPage] = useState('neural')
+  const [theme, setTheme] = useState(getPreferredTheme)
   const [habits, setHabits] = useState([
     { id: 1, name: 'Habit', completed: [true, true, true] },
     { id: 2, name: '7:20', completed: [true, false, true] },
@@ -49,9 +63,24 @@ function App() {
     { id: 'archive', name: 'Archive', icon: '📦' }
   ]
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+  }
+
   return (
     <div className="app">
-      <Sidebar pages={pages} selectedPage={selectedPage} onSelectPage={setSelectedPage} />
+      <Sidebar
+        pages={pages}
+        selectedPage={selectedPage}
+        onSelectPage={setSelectedPage}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+      />
       <MainContent habits={habits} toggleHabit={toggleHabit} />
     </div>
   )

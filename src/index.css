@@ -4,6 +4,42 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-app: #f4f6fb;
+  --bg-panel: #ffffff;
+  --bg-panel-muted: #f7f8fc;
+  --border-color: #d7dce8;
+  --text-primary: #1e2638;
+  --text-strong: #0f172a;
+  --text-muted: #61708a;
+  --hover-bg: #eef2fa;
+  --active-bg: #dde6fb;
+  --accent: #2563eb;
+  --accent-soft: #1d4ed8;
+  --chart-grid: #c6d0e1;
+  --chart-line: #16a34a;
+  --scroll-thumb: #b8c1d4;
+  --scroll-thumb-hover: #9aa8c2;
+}
+
+[data-theme='dark'] {
+  --bg-app: #0f0f0f;
+  --bg-panel: #1a1a1a;
+  --bg-panel-muted: #121212;
+  --border-color: #2f2f2f;
+  --text-primary: #c7c7c7;
+  --text-strong: #ffffff;
+  --text-muted: #8a8a8a;
+  --hover-bg: #262626;
+  --active-bg: #333333;
+  --accent: #3b82f6;
+  --accent-soft: #0ea5e9;
+  --chart-grid: #3a3a3a;
+  --chart-line: #6bc86b;
+  --scroll-thumb: #4b4b4b;
+  --scroll-thumb-hover: #5d5d5d;
+}
+
 html, body, #root {
   width: 100%;
   height: 100%;
@@ -11,12 +47,13 @@ html, body, #root {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #0f0f0f;
-  color: #ccc;
+  background: var(--bg-app);
+  color: var(--text-primary);
   font-size: 13px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Scrollbar styling */
@@ -30,12 +67,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: var(--scroll-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--scroll-thumb-hover);
 }
 
 button {
@@ -47,18 +84,12 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-}
-
-body {
-  margin: 0;
-}
-
 #root {
   width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: 1px solid var(--border-color);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -69,7 +100,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--text-strong);
 }
 
 h1 {
@@ -99,12 +130,12 @@ code,
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
-  color: var(--text-h);
+  color: var(--text-strong);
 }
 
 code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--bg-panel-muted);
 }

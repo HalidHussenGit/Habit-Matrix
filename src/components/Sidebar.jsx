@@ -1,10 +1,18 @@
 import './Sidebar.css'
 
-export default function Sidebar({ pages, selectedPage, onSelectPage }) {
+export default function Sidebar({ pages, selectedPage, onSelectPage, theme, onToggleTheme }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
         <h2>📌</h2>
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={onToggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        >
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
       </div>
       
       <nav className="sidebar-nav">

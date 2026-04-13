@@ -1,6 +1,6 @@
 .main-content {
   flex: 1;
-  background: #0f0f0f;
+  background: var(--bg-app);
   overflow-y: auto;
   display: flex;
   flex-direction: column;

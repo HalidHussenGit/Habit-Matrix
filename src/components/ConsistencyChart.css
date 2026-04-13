@@ -1,7 +1,7 @@
 .consistency-chart {
-  background: #1a1a1a;
+  background: var(--bg-panel);
   border-radius: 8px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--border-color);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -16,13 +16,13 @@
 
 .chart-header h3 {
   margin: 0;
-  color: #fff;
+  color: var(--text-strong);
   font-size: 14px;
   font-weight: 600;
 }
 
 .average {
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
@@ -40,14 +40,14 @@
 
 .stat-label {
   width: 40px;
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
   font-weight: 500;
 }
 
 .stat-value {
   width: 35px;
-  color: #fff;
+  color: var(--text-strong);
   font-size: 12px;
   font-weight: 600;
   text-align: right;
@@ -56,14 +56,14 @@
 .stat-bar {
   flex: 1;
   height: 6px;
-  background: #2a2a2a;
+  background: var(--hover-bg);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .stat-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #0066ff 0%, #00b4ff 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-soft) 100%);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -73,13 +73,13 @@
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  background: #0f0f0f;
+  background: var(--bg-panel-muted);
   border-radius: 6px;
 }
 
 .chart-note {
   margin: 0;
-  color: #666;
+  color: var(--text-muted);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -110,6 +110,6 @@
 }
 
 .legend-item span {
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
 }
