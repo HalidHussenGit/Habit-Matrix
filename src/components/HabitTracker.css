@@ -63,7 +63,7 @@
 
 .table-header {
   display: grid;
-  grid-template-columns: 200px repeat(3, 60px) 40px;
+  grid-template-columns: 190px repeat(7, 52px) 36px;
   gap: 0;
   padding: 0 16px;
   border-bottom: 1px solid var(--border-color);
@@ -94,7 +94,7 @@
 }
 
 .habit-actions-header {
-  width: 40px;
+  width: 36px;
 }
 
 .habits-list {
@@ -104,7 +104,7 @@
 
 .habit-row {
   display: grid;
-  grid-template-columns: 200px repeat(3, 60px) 40px;
+  grid-template-columns: 190px repeat(7, 52px) 36px;
   gap: 0;
   padding: 0 16px;
   border-bottom: 1px solid var(--border-color);
@@ -149,6 +149,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .action-btn {
@@ -171,6 +172,49 @@
 
 .habit-row:hover .more-btn {
   opacity: 1;
+}
+
+.habit-row.menu-open .more-btn {
+  opacity: 1;
+}
+
+.habit-menu {
+  position: absolute;
+  top: calc(100% - 2px);
+  right: 0;
+  min-width: 185px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  z-index: 40;
+}
+
+.habit-menu-item {
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+  font-size: 12px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.habit-menu-item:hover {
+  background: var(--hover-bg);
+}
+
+.habit-menu-item.danger {
+  color: #ef4444;
+}
+
+.habit-menu-item.danger:hover {
+  background: rgba(239, 68, 68, 0.12);
 }
 
 /* Scrollbar styling */

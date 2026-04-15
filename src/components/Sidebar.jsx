@@ -1,6 +1,14 @@
 import './Sidebar.css'
 
-export default function Sidebar({ pages, selectedPage, onSelectPage, theme, onToggleTheme }) {
+export default function Sidebar({
+  pages,
+  selectedPage,
+  onSelectPage,
+  theme,
+  onToggleTheme,
+  onAddHabit,
+  onFinishWeek
+}) {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
@@ -29,7 +37,12 @@ export default function Sidebar({ pages, selectedPage, onSelectPage, theme, onTo
       </nav>
 
       <div className="sidebar-actions">
-        <button className="add-page">+ New page</button>
+        <button className="sidebar-action-btn" type="button" onClick={onAddHabit}>
+          + Add Habit
+        </button>
+        <button className="sidebar-action-btn finish-week-btn" type="button" onClick={onFinishWeek}>
+          Finish the Week
+        </button>
       </div>
     </aside>
   )

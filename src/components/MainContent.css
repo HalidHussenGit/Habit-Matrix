@@ -8,8 +8,8 @@
 
 .content-wrapper {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 14px;
+  padding: 14px;
   max-width: 1400px;
   width: 100%;
 }
@@ -20,7 +20,7 @@
 }
 
 .chart-section {
-  width: 300px;
+  width: 240px;
   flex-shrink: 0;
 }
 

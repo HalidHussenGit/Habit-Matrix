@@ -88,9 +88,12 @@
 .sidebar-actions {
   padding: 10px;
   border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.add-page {
+.sidebar-action-btn {
   width: 100%;
   padding: 8px 12px;
   background: transparent;
@@ -102,7 +105,11 @@
   transition: all 0.2s;
 }
 
-.add-page:hover {
+.sidebar-action-btn:hover {
   border-color: var(--text-muted);
   color: var(--text-primary);
+}
+
+.finish-week-btn {
+  border-style: solid;
 }
